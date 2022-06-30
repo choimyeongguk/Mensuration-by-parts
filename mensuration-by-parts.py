@@ -38,6 +38,7 @@ if(RorL=='l'):
     else:
       plt.gca().add_patch(patches.Rectangle((spot1+(spot2-spot1)/n*i, 0), (spot2-spot1)/n, fc(spot1+(spot2-spot1)/n*(i+1)), color=num))
     S = S + abs(1/n*fc(i/n))
+    
 else:
   for i in range(0, n):
     num = '#0055ff' if i%2==0 else '#00aaff'
@@ -45,7 +46,7 @@ else:
       plt.gca().add_patch(patches.Rectangle((spot1+(spot2-spot1)/n*i, 0), (spot2-spot1)/n, fc(spot1+(spot2-spot1)/n*(i+1)), color=num))
     else:
       plt.gca().add_patch(patches.Rectangle((spot1+(spot2-spot1)/n*i, 0), (spot2-spot1)/n, fc(spot1+(spot2-spot1)/n*i), color=num))
-    S = S + abs(1/n*fc(i/n))
+    S = S + 1/n*fc((i+1)/n)
 
 print("\n%d %d"%(max, min))
 plt.title('f(x)=x^2, n= %d, area : %f'%(n,S))
